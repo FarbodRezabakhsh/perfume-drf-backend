@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
+from dotenv import load_dotenv            # ➊ ADD
 import sys
+load_dotenv()
 
 
 def main():
