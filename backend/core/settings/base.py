@@ -86,3 +86,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ROOT_URLCONF = "core.urls"
 
 AUTH_USER_MODEL = "accounts.User"
+
+STATIC_ROOT = BASE_DIR / "staticfiles"

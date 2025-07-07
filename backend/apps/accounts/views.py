@@ -27,7 +27,7 @@ def send_panel_otp(request):
     POST /auth/panel/sent-otp
     """
     serializer = PanelOTPSendSerializer(data=request.data)
-    serializer.is_valid()
+    serializer.is_valid(raise_exception=True)
 
     phone = serializer.validated_data['phone']
     user, _ = User.objects.get_or_create(phone=phone)
