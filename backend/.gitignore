@@ -31,7 +31,6 @@ Thumbs.db
 
 # Python env
 .env
-.env.*
 
 # Coverage / test
 .coverage
