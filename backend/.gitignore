@@ -36,6 +36,7 @@ Thumbs.db
 !.env.example 
 !env.template
 .env.production
+.liara-auth.json
 
 # Coverage / test
 .coverage
@@ -53,6 +54,7 @@ coverage.xml
 docker-compose.override.yml
 *.pid
 
+
 # Build / packaging
 dist/
 build/
@@ -65,3 +67,4 @@ node_modules/
 
 **/migrations/*.pyc
 **/migrations/__pycache__/
+*.zip
