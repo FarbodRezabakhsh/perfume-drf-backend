@@ -15,6 +15,7 @@ venv/
 db.sqlite3
 media/
 staticfiles/
+*.mo
 
 # Editor stuff
 .vscode/
@@ -31,6 +32,10 @@ Thumbs.db
 
 # Python env
 .env
+.env.*
+!.env.example 
+!env.template
+.env.production
 
 # Coverage / test
 .coverage
@@ -42,8 +47,21 @@ nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
+
+# Docker-specific
+.dockerignore
+docker-compose.override.yml
+*.pid
+
+# Build / packaging
+dist/
+build/
+*.egg-info/
+
+# Project notes
 project-structure.txt
 
-# Migrations (optional, if you recreate them per env)
+node_modules/
+
 **/migrations/*.pyc
 **/migrations/__pycache__/

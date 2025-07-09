@@ -1,15 +1,19 @@
 version: "3.9"
+
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
     ports:
       - "8000:8000"
-    env_file: .env
+    env_file:
+      - .env.production
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings.prod
     depends_on:
       - db
+    networks:
+      - internal-net
 
   db:
     image: postgres:17
@@ -20,8 +24,11 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+    networks:
+      - internal-net
 
 volumes:
   postgres_data:
+
+networks:
+  internal-net:
