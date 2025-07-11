@@ -51,7 +51,6 @@ coverage.xml
 
 # Docker-specific
 .dockerignore
-docker-compose.override.yml
 *.pid
 
 
